@@ -45,8 +45,9 @@ function exitWebApp() {
   align-items: center;
   justify-content: space-between;
   height: var.$layout-header-height;
+  margin-top: 0.5rem;
   padding: 1rem 2rem;
-  padding-top: 5rem;
+  padding-top: env(safe-area-inset-top);
   .site-title {
     margin-left: 1rem;
     font-weight: bold;
