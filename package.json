@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
-  "author": "LeoKu<czc12580520@gmail.com> (https://leoku.top)",
+  "author": "cor",
   "scripts": {
     "build": "npm run test && vite build",
     "build:prerelease": "vite build --mode prerelease",
@@ -23,6 +23,7 @@
     "clipboard": "^2.0.8",
     "html2canvas": "^1.3.2",
     "perfect-scrollbar": "^1.5.2",
+    "rollup-plugin-copy": "^3.4.0",
     "vue": "^3.2.6",
     "vue-i18n": "^9.2.0-beta.9",
     "vuex": "^4.0.2"

@@ -267,7 +267,9 @@ function handleAction(actionType: ActionType) {
       border-radius: 0.6rem;
       cursor: pointer;
       transition: color 0.2s;
+      -webkit-user-select: none;
       user-select: none;
+      -webkit-touch-callout: none;
 
       &:hover {
         color: lighten(var.$color-text, 10);

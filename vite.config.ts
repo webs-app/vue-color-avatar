@@ -1,12 +1,18 @@
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import copy from 'rollup-plugin-copy' //引入插件
 import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: './',
   plugins: [
     vue(),
+    copy({
+      targets: [
+        { src: './public/webApp.json', dest: './dist' }, //执行拷贝
+      ],
+    }),
     ...(mode === 'prerelease'
       ? [
           visualizer({
@@ -18,7 +24,6 @@ export default defineConfig(({ mode }) => ({
         ]
       : []),
   ],
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

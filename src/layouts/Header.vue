@@ -1,10 +1,12 @@
 <template>
   <header class="header">
+    <div class="header-left" @click="exitWebApp">←</div>
+
     <Logo />
 
     <h2 class="site-title">Color Avatar</h2>
 
-    <div class="header-right">
+    <!-- <div class="header-right">
       <a
         href="https://github.com/Codennnn/vue-color-avatar"
         target="_blank"
@@ -22,7 +24,7 @@
           <span class="text">GitHub</span>
         </button>
       </a>
-    </div>
+    </div> -->
   </header>
 </template>
 
@@ -30,6 +32,9 @@
 import IconGitHub from '@/assets/icons/icon-github.svg'
 import Logo from '@/components/Logo.vue'
 import { recordEvent } from '@/utils/ga'
+function exitWebApp() {
+  window.$G && window.$G.exitWebApp()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -38,9 +43,10 @@ import { recordEvent } from '@/utils/ga'
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: var.$layout-header-height;
   padding: 1rem 2rem;
-
+  padding-top: 5rem;
   .site-title {
     margin-left: 1rem;
     font-weight: bold;
@@ -51,7 +57,16 @@ import { recordEvent } from '@/utils/ga'
       display: none;
     }
   }
-
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #fff;
+    background: #3b3b3b;
+    border-radius: 0.5rem;
+  }
   .header-right {
     margin-left: auto;
 
